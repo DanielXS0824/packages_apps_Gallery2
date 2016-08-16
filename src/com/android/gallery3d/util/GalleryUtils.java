@@ -74,6 +74,8 @@ public class GalleryUtils {
     private static final String KEY_CAMERA_UPDATE = "camera-update";
     private static final String KEY_HAS_CAMERA = "has-camera";
     private static final String KEY_ALBUM_MODE = "album-mode";
+    private static final String KEY_ALBUMSET_ZOOM_LEVEL = "albumset_zoom_level";
+    private static final String KEY_ALBUM_ZOOM_LEVEL = "album_zoom_level";
 
     private static float sPixelDensity = -1f;
     private static boolean sCameraAvailableInitialized = false;
@@ -431,5 +433,25 @@ public class GalleryUtils {
     public static void setAlbumMode(Context context, int value) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         prefs.edit().putInt(KEY_ALBUM_MODE, value).commit();
+    }
+
+    public static int getAlbumsetZoomLevel(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getInt(KEY_ALBUMSET_ZOOM_LEVEL, 1);
+    }
+
+    public static int getAlbumZoomLevel(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getInt(KEY_ALBUM_ZOOM_LEVEL, 2);
+    }
+
+    public static void setAlbumsetZoomLevel(Context context, int value) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putInt(KEY_ALBUMSET_ZOOM_LEVEL, value).commit();
+    }
+
+    public static void setAlbumZoomLevel(Context context, int value) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putInt(KEY_ALBUM_ZOOM_LEVEL, value).commit();
     }
 }
