@@ -478,6 +478,7 @@ public class AlbumSetPage extends ActivityState implements
         mIsActive = true;
         mActionBar.setTransparentMode(false);
         mActivity.setSystemBarsTranlucent(false);
+        mActivity.showSystemBars();
 
         setContentPane(mRootPane);
         mActivity.getGLRootView().applySystemInsets();
